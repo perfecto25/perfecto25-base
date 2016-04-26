@@ -1,8 +1,15 @@
 class base {
 
-include base::linux
+$kernel = $::kernel
 
-notify { "this is from BASE": }
+case downcase($kernel) { 
+  'linux':    { include base::linux }
+  'windows':  { include base::windows }
+  default:    { include base::common }
+}
+
+
+notify { "applying: perfecto-25/base": }
 
 
 }
