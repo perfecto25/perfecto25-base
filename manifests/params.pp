@@ -11,7 +11,7 @@ class base::params {
     'RedHat': {
       if ($::operatingsystem == 'CentOS' and $::operatingsystemmajrelease in ['5','6','7']) {
         $ntp_pkg_name   = 'ntp'
-        $service_name   = 'ntpd'
+        $ntp_svc_name   = 'ntpd'
         }
         }
     
